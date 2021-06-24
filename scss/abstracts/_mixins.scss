@@ -1,0 +1,25 @@
+@use 'breakpoints';
+
+
+// Heading
+@mixin heading{
+    font-family: "Fraunces",sans-serif;
+    font-weight: 900;
+}
+// Paragraph
+@mixin description {
+    font-family: "Barlow",sans-serif;
+    font-weight: 600;
+    font-size: 1.125rem;
+}
+//Transition
+@mixin transition-ease {
+    transition: all 0.5s ease-in-out;
+}
+
+//Buttons
+@mixin button {
+    font-family: "Fraunces",sans-serif;
+    text-transform: uppercase;
+    
+}

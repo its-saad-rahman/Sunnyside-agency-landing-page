@@ -1,0 +1,109 @@
+@use '../abstracts' as *;
+
+.about {
+
+    .split {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        @include media('>=tablet') {
+            // flex-flow: row;
+            // justify-content: space-between;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: "content image";
+        }
+        
+        &__image--desktop {
+            @include media('<700px'){
+                display:none;
+            }
+            @include media('>tablet'){
+                object-fit: cover;
+                max-height: 100%;
+                width: 100%;
+            }
+            &-order{
+                @include media('>=tablet') {
+                    order: 2;
+                }
+            }
+            
+        }
+        &__image--mobile {
+            @include media('>=700px'){
+                display: none;
+            }
+        }
+
+        &__content {
+            padding: 3em 1em;
+            max-width: 21.6825em;
+            display: flex;
+            flex-flow: column;
+            justify-self: center;
+            align-items: center;
+            @include media('>=tablet'){
+                padding:1em 1em;
+                text-align: left;
+                display: flex;
+                flex-flow: column;
+                justify-self: center;
+                align-items: flex-start;
+            }
+
+            @include media('>=desktop'){
+                max-width: 25em;
+
+            }
+            @include media('>=desktopLG') {
+                max-width: 31em;
+            }
+
+            &--order{
+                @include media('>=tablet') {
+                    order:1;
+                }
+            }
+        }
+        &__heading{
+            font-size: 2rem;
+            line-height: 1.2;
+            text-align: center;
+            color: var(--clr-Neutral-100);
+            @include media('>=tablet'){
+                font-size: 1.5rem;
+                text-align: left;
+            }
+
+            @include media('>=desktop') {
+                font-size: 2rem;
+            }
+            @include media('>=1440px') {
+                font-size: 2.5rem;
+            }
+
+        }
+
+        &__description{
+            @include description;
+            text-align: center;
+            padding: 1rem 0;
+           line-height: 1.6;
+           
+           @include media('>=tablet'){
+               font-size: 1rem;
+               text-align: left;
+               
+           }
+
+           @include media('>=desktop'){
+               font-size: 1.125rem;
+               padding:3.125em 0 3.4375em 0;
+           }
+        }
+    }
+
+    
+}

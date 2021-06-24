@@ -1,0 +1,41 @@
+@use '../abstracts' as *;
+
+//HERO Section
+.hero {
+    
+    background: url(../images/mobile/image-header.jpg) no-repeat center/cover;
+    height: 100vh;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+
+    @include media('>tablet') {
+        background: url(../images/desktop/image-header.jpg) no-repeat center/cover;
+    }
+    &-heading{
+        @include heading;
+        text-transform: uppercase;
+        font-size: clamp(2.5rem, 10vw, 4rem);
+        text-align: center;
+        line-height: 1.2;
+        color: var(--clr-Neutral-500);
+        letter-spacing: 4.5px;
+    }
+
+    img {
+        margin-top: 2em;
+        width:30px;
+        animation: bounce 2s infinite;
+        @include transition-ease;
+
+        @include media('>=desktopLG') {
+            margin-top: 3em;
+            width: 40px;
+        }
+    }
+
+    
+    
+}
+

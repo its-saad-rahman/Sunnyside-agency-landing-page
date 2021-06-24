@@ -1,0 +1,17 @@
+@use '../abstracts' as *;
+
+
+
+
+
+.heading{
+    font-family: "Fraunces",sans-serif;
+    font-weight: 900;
+}
+// Paragraph
+.description {
+    font-family: "Barlow",sans-serif;
+    font-weight: 600;
+    font-size: 1.125rem;
+    color: var(--clr-Neutral-300);
+}

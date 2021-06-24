@@ -1,0 +1,25 @@
+@use '../abstracts' as *;
+
+.header {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    padding: 4rem 0;
+    @include transition-ease;
+    
+    @include media('>=tablet') {
+        display: flex;
+        justify-content: space-between;
+        
+
+    }
+    
+    .logo {
+        padding-left: 1.5625em;
+        @include media('>=tablet') {
+            padding-left: 2.5em;
+
+        }
+    }
+
+}

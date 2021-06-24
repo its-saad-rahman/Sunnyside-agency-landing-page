@@ -1,0 +1,142 @@
+@use '../abstracts' as *;
+
+
+.menu-btn{
+    position: absolute;
+    z-index: 3;
+    right: 2rem;
+    top: 4rem;
+    height: 20px;
+    width: 28px;
+    cursor: pointer;
+
+    @include media('>=700px'){
+        visibility: hidden;
+    }
+    &__burger {
+        position: absolute;
+        width:28px;
+        height: 2px;
+        background: var(--clr-Neutral-500);
+        right: 0;
+        top: .5em;
+        @include transition-ease;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 28px;
+            height: 2px;
+            top:8px;    
+            background: var(--clr-Neutral-500);
+            @include transition-ease;
+        }
+
+        &::after{
+            content: '';
+            position: absolute;
+            width: 28px;
+            height: 2px;
+            bottom: 8px;
+            background: var(--clr-Neutral-500);
+            @include transition-ease;
+        }
+
+        &.open{
+            transform:rotate(720deg);
+            background: transparent;
+            &::before{
+                transform:rotate(45deg) translate(-4px, -8px) ;
+            }
+            &::after{
+                transform: rotate(-45deg) translate(-3px, 7px);;
+            }
+            
+        }
+    }
+    
+    
+}
+
+//header button
+
+.header-button{
+    
+    @include button;
+     font-family: "Fraunces", sans-serif !important;
+     font-weight: 900 !important;
+     font-size: 18px !important;
+     padding:1em 1.5em !important;
+     background-color: var(--clr-Primary-200) !important;           
+     border-radius: 5em !important;
+     color:var(--clr-Neutral-100) !important;
+    @include transition-ease;
+
+    @include media('>=tablet'){
+        background-color: var(--clr-Neutral-500) !important;
+    }
+
+    &:hover{
+        @include media('>=tablet'){
+            color: var(--clr-Neutral-500) !important;
+            background-color: #6fcfff !important;
+        }
+    }
+}   
+
+//About button
+
+
+.split__button{
+    @include button;
+    position: relative;
+    color:var(--clr-Neutral-100);
+    font-size: 1.125rem;
+    font-weight: 900;
+    width: max-content;
+
+    @include media('>=tablet'){
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    &::after{
+        content: "";
+        height: .7em;
+        position: absolute;
+        width: 132px;
+        left: -5px;
+        right: 0;
+        bottom: -1px;
+        z-index: -1;
+        border-radius: 1rem;
+        transition: all 0.5s ease-in-out;
+        @include transition-ease;
+
+        @include media('>=tablet') {
+            // left:31%;
+            // width: 130px;
+
+        }
+
+       
+    }
+
+    &--yellow::after{
+        background: var(--clr-Primary-200);
+        opacity: 0.3;
+    }
+    &--yellow:hover::after{
+        opacity: 1;
+    }
+    &--red::after{
+        background: var(--clr-Primary-100);
+        opacity: 0.3;
+    }
+    &--red:hover::after{
+        opacity: 1;
+    }
+
+
+}
+
